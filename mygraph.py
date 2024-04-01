@@ -27,6 +27,9 @@ def floyd_warshall(graph):
       if distance_matrix[i][j] == 0 and i != j:
         distance_matrix[i][j] = math.inf
 
+  print("Before the Operation")
+  for row in distance_matrix:
+      print(row)
   # Consider each node as an intermediate point
   for k in range(n):
     for i in range(n):
@@ -46,7 +49,7 @@ graph = [
 
 # Find shortest distances between all pairs
 distance_matrix = floyd_warshall(graph)
-
+print("After the Operation")
 # Print the distance matrix
 for row in distance_matrix:
   print(row)  
