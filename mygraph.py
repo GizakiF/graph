@@ -1,5 +1,6 @@
 import math
 
+
 def floyd_warshall(graph):
   """
   Implements the Floyd-Warshall algorithm to find the shortest paths
@@ -35,15 +36,17 @@ def floyd_warshall(graph):
     for i in range(n):
       for j in range(n):
         # Check if going through node k gives a shorter path
-        distance_matrix[i][j] = min(distance_matrix[i][j], distance_matrix[i][k] + distance_matrix[k][j])
-
+#        distance_matrix[i][j] = min(distance_matrix[i][j], distance_matrix[i][k] + distance_matrix[k][j])
+#to do: add a string to append each vertices' shortest path from point A to B
+        if distance_matrix[i][j] > distance_matrix[i][k] + distance_matrix[k][j]:
+             distance_matrix[i][j] = distance_matrix[i][k] + distance_matrix[k][j]
   return distance_matrix
 
 # Example usage
 graph = [
   [0, 3, math.inf, 7],
   [8, 0, 2, math.inf],
-  [5, math.inf, 0, 1],
+  [5, 0, 0, 1],
   [2, math.inf, math.inf, 0]
 ]
 
