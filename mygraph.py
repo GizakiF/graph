@@ -52,7 +52,7 @@ graph = [
 
 # Find shortest distances between all pairs
 distance_matrix = floyd_warshall(graph)
-print("After the Operation")
+print("\nAfter the Operation")
 # Print the distance matrix
 for row in distance_matrix:
   print(row)  
