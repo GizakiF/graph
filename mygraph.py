@@ -74,24 +74,24 @@ def floyd_warshall(graph):
 #  [math.inf, 4, 1, 0]
 #]
 
-graph = [
-  [0, math.inf, -2, 0],
-  [4, 0, 3, 0],
-  [0, 0, 0, 2],
-  [0, -1, 0, 0]
-  ]
+# graph = [
+#   [0, math.inf, -2, 0],
+#   [4, 0, 3, 0],
+#   [0, 0, 0, 2],
+#   [0, -1, 0, 0]
+#]
 #graph = [
 #  [0, 2, 4, math.inf],
 #  [2, 0, 3, 4],
 #  [4, 3, 0, 1],
 #  [math.inf, -5, 1, 0]  # Introduce a negative weight cycle here
 #]
-#graph = [
-#    [0, 4, math.inf, 2],
-#    [4, 0, 3, math.inf],
-#    [math.inf, 3, 0, 1],
-#    [2, math.inf, 1, 0]
-#] 
+graph = [
+   [0, 4, math.inf, 2],
+   [4, 0, 3, math.inf],
+   [math.inf, 3, 0, 1],
+   [2, math.inf, 1, 0]
+] 
 # Find shortest distances, predecessors, and paths
 distance_matrix, predecessor_matrix, shortest_paths = floyd_warshall(graph)
 
